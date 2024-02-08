@@ -1,0 +1,41 @@
+#adventuregame
+
+def adventure_game():
+    print("Welcome to the Adventure Game!")
+    print("You find yourself at the edge of a dark forest.")
+    print("Do you enter the forest or walk around it? (enter/walk)")
+
+    choice1 = input("> ").lower()
+
+    if choice1 == "enter":
+        print("You bravely enter the forest, finding yourself on a shadowy path.")
+        print("After walking for a while, you see a cave and a small hut. Do you investigate the cave or the hut? (cave/hut)")
+
+        choice2 = input("> ").lower()
+
+        if choice2 == "cave":
+            print("You cautiously enter the cave. Inside, you find a treasure chest!")
+            print("Congratulations! You've found the treasure and won the game!")
+        elif choice2 == "hut":
+            print("You approach the hut and knock on the door. A friendly wizard answers.")
+            print("He offers you a potion of wisdom. You've gained wisdom but missed the treasure.")
+        else:
+            print("Confused, you wander back to the forest entrance. Game over.")
+    elif choice1 == "walk":
+        print("You decide to walk around the forest, which takes longer but seems safer.")
+        print("Eventually, you find a peaceful village and decide to stay there.")
+        print("While you didn't find treasure, you found a new home. Game over.")
+    else:
+        print("Unable to decide, you stand there forever. Game over.")
+
+def start_game():
+    while True:
+        adventure_game()
+        print("Do you want to play again? (yes/no)")
+        play_again = input("> ").lower()
+        if play_again != "yes":
+            print("Thanks for playing! Goodbye.")
+            break
+
+if __name__ == "__main__":
+    start_game()
